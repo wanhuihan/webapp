@@ -1,16 +1,23 @@
-
-
-
-<template id="">
-
-    <div class="">
-        this is register section
-    </div>
+<template>
+<div>
+====
+</div>
 </template>
 
-<script type="text/javascript">
-
-    export default {
-
+<script>
+export default {
+  data () {
+    return {
+      dialog: false
     }
+  },
+  methods: {
+    open () {
+      this.dialog = true
+    },
+    close () {
+      this.dialog = false
+    }
+  }
+}
 </script>

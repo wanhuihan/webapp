@@ -4,16 +4,22 @@
 
     <div class="welcome" >
 
+        <topBar></topBar>
         <login></login>
 
         <register></register>
 
+        <footNav></footNav>
     </div>
 </template>
 
 <script type="text/javascript">
 
     var login = require("./userCenter/login");
+
+    var headerTop = require("./public/header");
+
+    var footerNav = require("./public/footer")
 
     var register = require("./userCenter/register");
 
@@ -25,7 +31,11 @@
 
             'login': login,
 
-            'register': register
+            'register': register,
+
+            'topBar': headerTop,
+
+            'footNav': footerNav
         }
     }
 </script>
