@@ -1,45 +1,29 @@
 
 
-<template id="">
-
-    <div class="welcome" >
-
-        <topBar></topBar>
-        <login></login>
-
-        <register></register>
-
-        <footNav></footNav>
+<template>
+    <div>
+        <button @click="show">Click me!</button>
+        <div v-show="visible" title="Welcome">欢迎使用 </div>
+        {{visible}}
     </div>
 </template>
 
-<script type="text/javascript">
 
-    var login = require("./userCenter/login");
+<script>
 
-    var headerTop = require("./public/header");
+    
+    export default {
 
-    var footerNav = require("./public/footer")
-
-    var register = require("./userCenter/register");
-
-    import "./welcome.scss";
-
-    export default  {
-
-        components: {
-
-            'login': login,
-
-            'register': register,
-
-            'topBar': headerTop,
-
-            'footNav': footerNav
+      data () {
+        return {
+            visible: false
         }
+      },
+      methods: {
+          show: function () {
+              this.visible = !this.visible;
+          }
+      }
     }
+
 </script>
-
-<style media="screen">
-
-</style>

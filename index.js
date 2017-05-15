@@ -1,23 +1,25 @@
 
 import Vue from "vue";
 
-// import Favlist from "./components/Favlist";
-
-import MuseUI from 'muse-ui';
-
-import './node_modules/muse-ui/dist/muse-ui.css'
-
-Vue.use(MuseUI);
-
 import welcome from './components/welcome';
 
-// import './style.css'
+// import VueRouter from 'vue-router';
+// import App from 'components/app.vue';    // 路由挂载
+// import Routers from './router.js';       // 路由列表
 
+// import Mint from 'mint-ui';
+
+// Vue.use(Mint);
+
+// import { Button } from 'mint-ui';
+
+// import './node_modules/iview/dist/styles/iview.css';
+// import './style.css'
 
 new Vue({
 
 	el: '#test',
 	// router,
-	render: h => h ( welcome)
+	render: h => h (welcome)
 
 })

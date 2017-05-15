@@ -21,10 +21,16 @@ module.exports = {
         extensions: ['*', '.js', '.vue','scss'],
 
         alias: {
-            'muse-components': 'muse-ui/src'
+            'muse-components': 'muse-ui/src',
+            'vue$': './node_modules/vue/dist/vue.js'
         }
     },
+
+    externals: {
+        'Vue': 'window.vue'
+    },
     module: {
+        // noParse: [],
 
         loaders: [
             {
@@ -38,13 +44,14 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                loader: 'style-loader!css-loader!url-loader',
+                // include: path.resolve(__dirname, './')
             },
             {
               test:/\.scss$/,
               loader: 'style-loader!css-loader!sass-loader'
-            }
-            // {test:/\.scss$/,loader:extractCss.extract(['css','sass'])}
+          },
+
         ]
     },
 
@@ -52,7 +59,7 @@ module.exports = {
       extractCss
     ],
     devServer: {
-        host: '192.168.1.103',
+        host: '192.168.0.100',
         port: '4001',
         contentBase: './',
         historyApiFallback: true,
