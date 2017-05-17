@@ -1,25 +1,44 @@
 
-import Vue from "vue";
-
+// import Vue from "vue";
+//
 import welcome from './components/welcome';
+//
+import login from './components/userCenter/login';
 
-// import VueRouter from 'vue-router';
-// import App from 'components/app.vue';    // 路由挂载
-// import Routers from './router.js';       // 路由列表
+import register from './components/userCenter/register';
 
-// import Mint from 'mint-ui';
+import forget from './components/userCenter/forget';
 
-// Vue.use(Mint);
+import MuseUI from 'muse-ui';
 
-// import { Button } from 'mint-ui';
+var routes = [
 
-// import './node_modules/iview/dist/styles/iview.css';
-// import './style.css'
+	{
+		path: '/',
+		name: 'welcome',
+		component: welcome
+	},
 
-new Vue({
+	{
+		path: '/user/login',
+		name: 'login',
+		component: login
+	},
+	{
+		path: '/user/register',
+		name: 'register',
+		component: register
+	},
+]
 
-	el: '#test',
-	// router,
-	render: h => h (welcome)
+var router = new VueRouter({
+
+  routes
 
 })
+// //
+new Vue({
+
+	router
+
+}).$mount('#app')

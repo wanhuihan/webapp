@@ -6,25 +6,27 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
 
-		<!-- <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css"> -->
-		<!-- 引入组件库 -->
+		<link rel="stylesheet" href="./static/iconfont/material-icons.css">
+		<script src="https://cdn.bootcss.com/vue/2.3.3/vue.js"></script>
+		<script src="https://cdn.bootcss.com/vue-router/2.5.3/vue-router.js"></script>
 
-		<!-- 引入样式 -->
-		<link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+		<link rel="stylesheet" href="./static/muse-ui/muse-ui.css">
+		<script type="text/javascript" src="./static/muse-ui/muse-ui.js">
 
+		</script>
 	</head>
 
 <body>
 
-	<div id="test" >
+	<div id="app" >
 
-	</div>
+		<router-view>
+		</router-view>
 
-	<div class="" id="app">
-		<mt-button @click.native="handleClick">按钮</mt-button>
 	</div>
 
 </body>
+
 
 <script type="text/javascript" src="static/main.js"></script>
 

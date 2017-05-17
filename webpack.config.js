@@ -4,6 +4,8 @@ var path = require('path');
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 var extractCss = new ExtractTextWebpackPlugin("./static/css/[name].css");
+
+var webpack = require('webpack');
 module.exports = {
 
     entry: path.resolve(__dirname, './index.js'),
@@ -21,13 +23,15 @@ module.exports = {
         extensions: ['*', '.js', '.vue','scss'],
 
         alias: {
-            'muse-components': 'muse-ui/src',
-            'vue$': './node_modules/vue/dist/vue.js'
+            // 'muse-components': 'muse-ui/src',
+            // 'vue$': 'vue/dist/vue.js',
+            // 'vue-router$': 'vue-router/dist/vue-router.common.js'
         }
     },
 
     externals: {
-        'Vue': 'window.vue'
+        'Vue': 'vue',
+        'vue-router': 'vue-router'
     },
     module: {
         // noParse: [],
@@ -57,6 +61,12 @@ module.exports = {
 
     plugins: [
       extractCss
+    //   new webpack.LoaderOptionsPlugin({
+    //     vue: {
+    //       // 使用用户自定义插件
+    //       postcss: [require('postcss-cssnext')()]
+    //     }
+    //   })
     ],
     devServer: {
         host: '192.168.0.100',

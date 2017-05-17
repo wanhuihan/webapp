@@ -1,29 +1,44 @@
 
 
 <template>
-    <div>
-        <button @click="show">Click me!</button>
-        <div v-show="visible" title="Welcome">欢迎使用 </div>
-        {{visible}}
+    <div class="welcome">
+
+        <h2>This is welcome showing</h2>
+
     </div>
 </template>
 
-
 <script>
 
-    
-    export default {
+    setTimeout(function() {
+        // VueRouter.push('/user/login');
+        window.location.href = '#/user/login'
 
-      data () {
-        return {
-            visible: false
-        }
-      },
-      methods: {
-          show: function () {
-              this.visible = !this.visible;
-          }
-      }
-    }
+    }, 5000);
 
 </script>
+
+<style media="screen" lang="scss">
+
+    html,body {
+        width: 100%;
+        height: 100%;
+        #app {
+            height: 100%;
+            width: 100%;
+        }
+    }
+</style>
+
+<style lang="scss" media="screen" scoped>
+    .welcome {
+
+        height: 100%;
+        background: #eee;
+
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+    }
+</style>
